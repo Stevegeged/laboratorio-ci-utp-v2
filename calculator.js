@@ -3,6 +3,8 @@
  * Asignatura: Herramientas de Desarrollo - UTP
  * Caso Práctico: Microservicio de cálculo aritmético automatizado
  * Empresa: TIC-Solutions UTP
+ * Requerimiento: HU01 - Implementar módulo de calculadora y pruebas unitarias
+ * Versión: 1.0.0
  */
 
 /**
