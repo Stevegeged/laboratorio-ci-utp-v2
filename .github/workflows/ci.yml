@@ -1,0 +1,30 @@
+name: Pipeline CI y Gestion Colaborativa UTP
+
+on:
+  push:
+    branches: [ "main", "develop" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    name: Compilacion y Pruebas en Runner Ubuntu
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - name: 1. Checkout del codigo fuente
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar entorno de ejecucion Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: 3. Instalacion de dependencias limpias
+        run: npm ci
+
+      - name: 4. Ejecutar Suite de Pruebas Unitarias Automatizadas
+        run: npm test
