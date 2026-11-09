@@ -1,0 +1,12 @@
+{
+  "name": "laboratorio-ci-utp-v2",
+  "version": "1.0.0",
+  "description": "Laboratorio CI con GitHub Actions y GitHub Projects - UTP",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
